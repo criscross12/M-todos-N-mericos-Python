@@ -1,0 +1,61 @@
+{% extends 'layout/Header.html' %}
+
+{% load static %}
+
+<!-- Css Especial -->
+    {% block head %}
+        
+    {% endblock  %}
+
+<!-- Contenido -->
+    {% block content %}
+    
+    <!-- Control -->
+
+        <p align="center">{{titles.titulo1}}</p>
+        <form method="get" align="center">
+            <div class="row" style=" align-items: center; justify-content: center;">
+                <div class="col-auto my-1">
+                    {% if not mostrar.ShowVales %}
+                        <p>{{ins.instruccion1}}</p>
+                        <input class="form-control" name="Fun" type="text"  value = "{{ fun.Func }}"></input> 
+                        <p></p>
+                        <p>{{ins.instruccion2}}</p>
+                        <input class="form-control" name="Low" type="text" value = "{{ fun.Lw }}"></input> 
+                        <p></p>
+                        <p>{{ins.instruccion3}}</p>  
+                        <input class="form-control" name="Up" type="text"  value = "{{ fun.U }}"></input> 
+                        <p></p>
+                        <p>{{ins.instruccion4}}</p>
+                        <input class="form-control" name="Num" type="text"  value = "{{ fun.Nu }}"></input> 
+                        <p></p>                                       
+                        <button type="submit" class="btn btn-primary">Cargar Funcion</button>
+                        <p></p> 
+                        <p>El valor que resuleve la funcion es:</p>
+                        <p>{{fun.Re}}</p>                                           
+
+                    {% else %}
+                        <p>{{ins.instruccion1}}</p>
+                        <input class="form-control" name="Fun" type="text"></input> 
+                        <p></p>
+                        <p>{{ins.instruccion2}}</p>
+                        <input class="form-control" name="Low" type="text"></input> 
+                        <p></p>
+                        <p>{{ins.instruccion3}}</p>  
+                        <input class="form-control" name="Up" type="text"></input> 
+                        <p></p>
+                        <p>{{ins.instruccion4}}</p>
+                        <input class="form-control" name="Num" type="text"></input> 
+                        <p></p>                                       
+                        <button type="submit" class="btn btn-primary">Cargar Funcion</button>
+                    {% endif %}
+                </div>
+            </div>
+        </form>
+
+
+    {% endblock %}    
+
+    {% block script %}
+
+    {% endblock  %}

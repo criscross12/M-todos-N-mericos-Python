@@ -1,0 +1,59 @@
+{% extends 'layout/Header.html' %}
+
+{% load static %}
+
+<!-- Css Especial -->
+    {% block head %}
+        
+    {% endblock  %}
+
+<!-- Contenido -->
+    {% block content %}
+    
+    <!-- Control -->
+        
+    <p align="center">{{titles.titulo1}}</p>
+        <form method="get" align="center">
+            <div class="row" style=" align-items: center; justify-content: center;">
+                <div class="col-md-3">
+                   
+                    
+                    {% if not mostrar.ShowVales %}
+                        <p>{{ins.instruccion1}}</p>
+                        <input class="form-control" name="Func" type="text"  value = "{{ fun.f }}"></input> 
+                        <p></p>
+                        <p>{{ins.instruccion2}}</p>
+                        <input class="form-control" name="Lw" type="text" value = "{{ fun.x }}"></input> 
+                        <p></p>
+                        <p></p>                                       
+                        <button type="submit" class="btn btn-primary">Cargar Funcion</button>
+                        <p></p> 
+                        <p>El valor de la derivada es :</p>
+                        <h2>Derivada simple</h2>
+                        <p>{{fun.r}}</p>
+                        <h5>Derivada compuesta</h5> 
+                        <p>{{fun.re}}</p> 
+                        <h5>seno</h5>
+                        <p>{{fun.se}}</p>
+                        <h5>coseno</h5>
+                        <p>{{fun.co}}</p>
+                    {% else %}
+                        <p>{{ins.instruccion1}}</p>
+                        <input class="form-control" name="Func" type="text"></input> 
+                        <p></p>
+                        <p>{{ins.instruccion2}}</p>
+                        <input class="form-control" name="Lw" type="text"></input> 
+                        <p></p>
+                        <p></p>                                       
+                        <button type="submit" class="btn btn-primary">Cargar Funcion</button>
+                    {% endif %}
+                </div>
+            </div>
+        </form>
+
+
+    {% endblock %}    
+
+    {% block script %}
+
+    {% endblock  %}

@@ -1,0 +1,49 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<!-- Head -->
+    <head>
+        <meta charset="utf-8">
+        <title>{{titles.titulo0}}</title>
+        <meta name="description" content="The HTML5 Herald">
+        <meta name="author" content="SitePoint">
+
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" media="screen">
+  
+    {% block head %}
+    {% endblock  %}
+
+    </head>
+
+<body>
+    
+<!-- Contenido -->
+    <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="Home">Métodos Númericos</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup"></div>
+            <div class="navbar-nav">
+                <a class="nav-link active" href="biseccion">Método de Bisección<span class="sr-only">(current)</span></a>
+                <a class="nav-link active" href="derivacion">Derivada</a>
+                <a class="nav-link active" href="Integracion">Integración</a>
+                <a class="nav-link active" href="Euler">Euler</a>
+
+               
+            </div>
+        </nav>
+
+    <!-- Html -->
+        {% block content %}
+        {% endblock %}    
+
+    <!-- Script -->
+        <script src="{% static 'js/bootstrap.js' %}"></script>
+        {% block script %}
+        {% endblock  %}
+
+</body>
+</html>
